@@ -68,5 +68,8 @@ vcpkg_installed/
 Testing/
 .cache/
 .DS_Store
+<<<<<<< HEAD
 .DS_Store
 test
+=======
+>>>>>>> 858c35f (Ignore .DS_Store)
