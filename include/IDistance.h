@@ -1,7 +1,7 @@
 
 #pragma once
-using  namespace std;
 #include <vector>
+using  namespace std;
 
 class IDistance {
 public:
