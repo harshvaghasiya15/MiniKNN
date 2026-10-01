@@ -16,7 +16,7 @@ MiniKNN is a small C++ library that does this using object-oriented design. The 
 
 | Class | Role |
 |---|---|
-| `DataPoint` | One row of data: a `vector<double>` of features and a `string` label. |
+| `DataPoint` | One row of data: a `vector<double>` of features and a `string` label. `distanceTo(other, metric)` measures the distance to another point using any `IDistance`. |
 | `DataSet` | A collection of `DataPoint`s. Loads the Iris CSV file with `loadCSV(path)`. |
 | `IDistance` | Abstract interface for a distance metric: `calculate(a, b)`. |
 | `EuclideanDistance` | Implements `IDistance` using the straight-line distance. |
@@ -29,6 +29,7 @@ MiniKNN is a small C++ library that does this using object-oriented design. The 
 - `DataSet` owns many `DataPoint`s (composition).
 - `KNNClassifier` owns its `IDistance` metric and its training `DataSet` (composition).
 - `KNNClassifier::predict` uses a `DataPoint` as its input (dependency).
+- `DataPoint::distanceTo` uses an `IDistance` metric passed in as a parameter (dependency).
 
 The full diagram is in [`docs/class_diagram.png`](docs/class_diagram.png).
 
@@ -84,5 +85,3 @@ The program reads `data/iris.csv`, so run it from the project root folder.
 | Harsh Vaghasiya | Data layer: `DataPoint`, `DataSet`, `iris.csv` |
 | Deep Vekariya | Distance layer: `IDistance`, `EuclideanDistance`, `ManhattanDistance` |
 | Sanyam kocher | Classifier interface (`KNNClassifier.h`), class diagram, README |
-
-
