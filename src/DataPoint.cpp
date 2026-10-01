@@ -8,6 +8,10 @@ DataPoint::DataPoint() {}
 
 DataPoint::DataPoint(const vector<double>& features,const string& label) : features(features) , label(label) {}
 
+double DataPoint::distanceTo(const DataPoint& other,const IDistance& metric) const{
+    return metric.calculate(features,other.features);
+}
+
 void DataPoint::print() const{
     cout << "[";
     for(size_t i = 0;i < features.size();i++){
