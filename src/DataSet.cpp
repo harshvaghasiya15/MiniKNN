@@ -9,7 +9,7 @@ void DataSet::loadCSV(const string& path){
     ifstream file(path);
 
     if(!file.is_open()){
-        throw runtime_error("Could not open file: " + path);
+        throw runtime_error("DataSet: Could not open file: " + path);
     }
 
     points.clear();
@@ -34,7 +34,7 @@ void DataSet::loadCSV(const string& path){
         }
 
         if(cells.size() != 5){
-            throw runtime_error("Malformed row at line " + to_string(lineNumber) + ": expected 5 colums, got " + to_string(cells.size()));
+            throw runtime_error("DataSet: Malformed row at line " + to_string(lineNumber) + ": expected 5 colums, got " + to_string(cells.size()));
         }
 
         try{
@@ -42,9 +42,9 @@ void DataSet::loadCSV(const string& path){
                 features.push_back(stod(cells[i]));
             }
         } catch(const invalid_argument&){
-            throw runtime_error("Non numeric value at line: " + to_string(lineNumber));
+            throw runtime_error("DataSet: Non numeric value at line: " + to_string(lineNumber));
         } catch(const out_of_range&){
-            throw runtime_error("Numeric value out of range at line: " + to_string(lineNumber));
+            throw runtime_error("DataSet: Numeric value out of range at line: " + to_string(lineNumber));
         }
 
         label = cells[4];
@@ -55,7 +55,7 @@ void DataSet::loadCSV(const string& path){
     file.close();
 
     if(points.empty()){
-        throw runtime_error("No data loaded from file: " + path);
+        throw runtime_error("DataSet: No data loaded from file: " + path);
     }
 }
 
