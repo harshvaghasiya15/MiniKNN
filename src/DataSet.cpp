@@ -43,6 +43,8 @@ void DataSet::loadCSV(const string& path){
             }
         } catch(const invalid_argument&){
             throw runtime_error("Non numeric value at line: " + to_string(lineNumber));
+        } catch(const out_of_range&){
+            throw runtime_error("Numeric value out of range at line: " + to_string(lineNumber));
         }
 
         label = cells[4];
