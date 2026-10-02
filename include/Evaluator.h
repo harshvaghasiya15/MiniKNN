@@ -1,5 +1,5 @@
-#ifndef EVALUATOR.H
-#define EVALUATOR.H
+#ifndef EVALUATOR_H
+#define EVALUATOR_H
 
 #include<utility>
 #include<map>
