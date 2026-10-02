@@ -71,7 +71,7 @@ void Evaluator::printConfusionMatrix(const map<string, map<string, int>>& matrix
         }
     }
 
-    const int colWidth = 18;
+    const int colWidth = 20;
 
     cout << left << setw(colWidth) << "Actual \\ Predicted";
     for(const auto& l : labels) cout << setw(colWidth) << l;

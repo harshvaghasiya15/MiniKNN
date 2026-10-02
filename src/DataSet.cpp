@@ -19,6 +19,9 @@ void DataSet::loadCSV(const string& path){
     while(getline(file,line)){
         lineNumber++;
         
+        if(!line.empty() && line.back() == '\r'){
+            line.pop_back();
+        }
         if(line.empty()){
             continue;
         }
