@@ -4,6 +4,7 @@
 #include<stdexcept>
 #include<iostream>
 #include<set>
+#include <iomanip>
 using namespace std;
 
 pair<DataSet,DataSet> Evaluator::trainTestSplit(const DataSet& data, double trainRatio, unsigned seed){
@@ -61,7 +62,7 @@ map<string, map<string, int>> Evaluator::confusionMatrix(const KNNClassifier& cl
     return matrix;
 }
 
-void Evaluator::printConfusionMatrix(const map<string, map<string, int>>& matrix) {
+void Evaluator::printConfusionMatrix(const map<string, map<string, int>>& matrix){
     set<string> labels;
     for(const auto& row : matrix){
         labels.insert(row.first);
@@ -70,12 +71,14 @@ void Evaluator::printConfusionMatrix(const map<string, map<string, int>>& matrix
         }
     }
 
-    cout << "Actual \\ Predicted";
-    for(const auto& l : labels) cout << "\t" << l;
+    const int colWidth = 18;
+
+    cout << left << setw(colWidth) << "Actual \\ Predicted";
+    for(const auto& l : labels) cout << setw(colWidth) << l;
     cout << endl;
 
     for(const auto& actual : labels){
-        cout << actual;
+        cout << left << setw(colWidth) << actual;
         for(const auto& predicted : labels){
             int count = 0;
             auto rowIt = matrix.find(actual);
@@ -85,7 +88,7 @@ void Evaluator::printConfusionMatrix(const map<string, map<string, int>>& matrix
                     count = colIt->second;
                 }
             }
-            cout << "\t" << count;
+            cout << setw(colWidth) << count;
         }
         cout << endl;
     }
