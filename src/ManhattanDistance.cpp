@@ -9,7 +9,7 @@ double ManhattanDistance::calculate(const vector<double>& a, const vector<double
     }
 
     double sum = 0.0;
-    for (size_t i = 0; i < a.size(); ++i) {
+    for (size_t i = 0; i < a.size(); i++) {
         sum += fabs(a[i] - b[i]);
     }
     return sum;

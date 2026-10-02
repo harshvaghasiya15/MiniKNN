@@ -1,4 +1,3 @@
-
 #pragma once
 #include "IDistance.h"
 using namespace std;
