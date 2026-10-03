@@ -1,4 +1,17 @@
-#include <bits/stdc++.h>
+#include <algorithm>
+#include <cctype>
+#include <cmath>
+#include <exception>
+#include <iomanip>
+#include <iostream>
+#include <memory>
+#include <sstream>
+#include <stdexcept>
+#include <string>
+#include <utility>
+#include <vector>
+
+
 #include "DataSet.h"
 #include "DataPoint.h"
 #include "IDistance.h"
