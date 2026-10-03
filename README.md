@@ -166,7 +166,8 @@ MiniKNN/
 │   ├── KSelector.cpp
 │   └── main.cpp
 ├── Makefile
-└── README.md
+├── README.md
+└── DOCUMENTATION.md
 ```
 
 ## Team
