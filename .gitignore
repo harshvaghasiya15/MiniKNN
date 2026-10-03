@@ -48,7 +48,7 @@ build-*/
 CMakeFiles/
 CMakeCache.txt
 cmake_install.cmake
-Makefile
+
 install_manifest.txt
 compile_commands.json
 
@@ -68,12 +68,11 @@ vcpkg_installed/
 Testing/
 .cache/
 .DS_Store
-<<<<<<< HEAD
-.DS_Store
-test
-=======
->>>>>>> 858c35f (Ignore .DS_Store)
+
+
 test_knn
 test_distance
 test_knn
 test_distance
+
+miniknn
