@@ -10,7 +10,7 @@ K-Nearest Neighbours (KNN) classifies a new point by looking at the *k* closest 
 
 The distance formula is not hardcoded. It is a swappable component behind an interface (`IDistance`), so the classifier can use Euclidean, Manhattan or Minkowski distance without changing its own code.
 
-**Dataset:** Iris, 150 rows. Each row has 4 numeric features (sepal length, sepal width, petal length, petal width) and a label (`Iris-setosa`, `Iris-versicolor` or `Iris-virginica`).
+**Dataset:** Iris, 1200 rows. Each row has 4 numeric features (sepal length, sepal width, petal length, petal width) and a label (`Iris-setosa`, `Iris-versicolor` or `Iris-virginica`).
 
 ## Features
 
