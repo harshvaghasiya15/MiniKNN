@@ -91,7 +91,7 @@ The cost of one prediction is about `n * d` for the distances (`n` training poin
 - **Composition with `unique_ptr`.** The classifier owns its metric. `unique_ptr` expresses exclusive ownership and frees the memory automatically (RAII). A pointer is needed because `IDistance` is abstract and cannot be stored by value.
 - **Virtual destructor.** Without it, deleting a metric through an `IDistance` pointer would be undefined behaviour.
 - **`const&` parameters.** `predict`, `distanceTo`, `fit` and the `Evaluator` functions take their arguments by `const` reference, which avoids copies and promises not to modify them.
-- **`fit` copies the data.** This is simple and safe, and 150 rows is tiny. A reference would avoid the copy but could dangle if the original dataset were destroyed.
+- **`fit` copies the data.** This is simple and safe. A reference would avoid the copy but could dangle if the original dataset were destroyed.
 - **Shuffle with a fixed seed.** Iris is stored sorted by species, so splitting without shuffling would put whole species only in the test set. The fixed seed (42) makes every run give the same split and the same accuracy.
 - **Normalise using the training data only.** The scale is learned from the training set and then applied to the test set and to any new point. Learning it from the test data would leak information about it into the model (data leakage). Normalising matters because KNN is distance-based: a feature with a large range would otherwise dominate.
 - **Utility classes with static functions.** `Evaluator` and `KSelector` hold no state, so their functions are static. `Normalizer` holds state (the learned minimums and maximums), so it is a normal class.
@@ -137,5 +137,5 @@ Input is read line by line and checked. A wrong entry is rejected and asked agai
 
 - `loadCSV` only accepts exactly 5 columns, so it is tied to the Iris format.
 - The split is a plain random split, not stratified, so a small test set may contain few points of one species.
-- `predict` computes the distance to every training point, which is fine for 150 rows but would be slow for large datasets.
+- `predict` computes the distance to every training point.
 - Voting is unweighted: every one of the *k* neighbours counts equally, however far away it is.
