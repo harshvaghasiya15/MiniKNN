@@ -5,7 +5,7 @@
 #include <stdexcept>
 using namespace std;
 
-int KSelector::findBestK(const DataSet& train, const vector<int>& candidates, function<unique_ptr<IDistance>()> makeMetric,
+int KSelector::findBestK(const DataSet& train, const vector<int>& candidates,  function<unique_ptr<IDistance>()> makeMetric,
                          int folds, unsigned seed) {
     if (candidates.empty() || folds < 2 || train.size() < static_cast<size_t>(folds)) {
         throw invalid_argument("KSelector: bad arguments");

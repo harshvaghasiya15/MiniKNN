@@ -58,8 +58,8 @@ Run it from the project root, because the default path `data/iris.csv` is relati
 ### Sample output
 
 ```
-Loaded 150 rows from data/iris.csv.
-Train: 120 rows, Test: 30 rows.
+Loaded 1200 rows from data/iris.csv.
+Train: 960 rows, Test: 240 rows.
 
 ==================== MiniKNN ====================
 Current: Euclidean, k = 5
@@ -72,20 +72,36 @@ Current: Euclidean, k = 5
 Your choice: 3
 
 Metric: Euclidean, k = 5
-Test rows: 30
-Accuracy: 86.67%
+Test rows: 240
+Accuracy: 95.42%
 
 Confusion matrix (rows = actual, columns = predicted):
-Actual \ Predicted  Iris-setosa         Iris-versicolor     Iris-virginica
-Iris-setosa         7                   0                   0
-Iris-versicolor     0                   13                  1
-Iris-virginica      0                   3                   6
+Actual \ Predicted  Iris-setosa         Iris-versicolor     Iris-virginica      
+Iris-setosa         81                  0                   0                   
+Iris-versicolor     0                   75                  3                   
+Iris-virginica      0                   8                   73                  
 
+==================== MiniKNN ====================
+Current: Euclidean, k = 5
+  1. Choose distance metric
+  2. Set k
+  3. Show accuracy on the test set
+  4. Classify a custom flower
+  5. Find the best k automatically
+  0. Exit
 Your choice: 5
 
-Trying k = 1, 3, 5, ... 15 with 5-fold cross-validation on the training data...
-Best k for Euclidean: 3 (k has been set to 3).
+Trying k = 5,7,9, ... 41,43,45 with 5-fold cross-validation on the training data...
+Best k for Euclidean: 15 (k has been set to 15).
 
+==================== MiniKNN ====================
+Current: Euclidean, k = 15
+  1. Choose distance metric
+  2. Set k
+  3. Show accuracy on the test set
+  4. Classify a custom flower
+  5. Find the best k automatically
+  0. Exit
 Your choice: 4
 
 Enter the measurements of the flower:
@@ -93,7 +109,7 @@ Enter the measurements of the flower:
   Sepal width (cm): 3.0
   Petal length (cm): 5.2
   Petal width (cm): 2.3
-Predicted species: Iris-virginica  (Euclidean, k = 3)
+Predicted species: Iris-virginica  (Euclidean, k = 15)
 ```
 
 ## Design
