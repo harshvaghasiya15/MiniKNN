@@ -204,9 +204,9 @@ void classifyCustomPoint(const Session& session) {
 
 void findBestK(Session& session) {
     vector<int> candidates;
-    for (int k = 1; k <= 15; k += 2) candidates.push_back(k);
+    for (int k = 5; k <= 45; k += 2) candidates.push_back(k);
 
-    cout << "\nTrying k = 1, 3, 5, ... 15 with 5-fold cross-validation on the training data..." << endl;
+    cout << "\nTrying k = 5,7,9, ... 41,43,45 with 5-fold cross-validation on the training data..." << endl;
 
     const Settings current = session.settings;
     int best = KSelector::findBestK(session.trainScaled, candidates,
