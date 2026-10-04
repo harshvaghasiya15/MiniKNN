@@ -124,7 +124,7 @@ Input is read line by line and checked. A wrong entry is rejected and asked agai
 
 ## 7. Data Format
 
-`data/iris.csv` has 150 rows and no header. Each row is `sepal length, sepal width, petal length, petal width, label`, for example `5.1,3.5,1.4,0.2,Iris-setosa`. Another dataset can be used if it has exactly the same shape (4 numeric columns and a label).
+`data/iris.csv` has 1200 rows and no header. Each row is `sepal length, sepal width, petal length, petal width, label`, for example `5.1,3.5,1.4,0.2,Iris-setosa`. Another dataset can be used if it has exactly the same shape (4 numeric columns and a label).
 
 ## 8. Extending the Library
 
